@@ -1,0 +1,16 @@
+.basic-container {
+    padding: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.25);
+    display: inline-flex;
+    flex-flow: row wrap;
+    background: white; 
+    color: rgb(44, 44, 44);
+}
+  
+mat-card {
+    align-content: center;
+    height: 100%;
+}

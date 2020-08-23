@@ -1,0 +1,49 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxLayout = "row wrap" fxLayoutAlign = "space-around center" class = "shadow">
+        <mat-tab-group mat-align-tabs="begin" class = "card">
+            <!--Cadastrar Container-->
+            <mat-tab label="Cadastrar">
+                <form><br><br>
+                    <mat-form-field fxLayoutAlign="begin center">
+                        <input #codContainer matInput placeholder="Cadastrar ISO">
+                    </mat-form-field>
+                    <br><br>
+                    <div fxLayoutAlign="begin end">
+                    <button mat-raised-button color="primary"  class ="ltr" (click)="cadastro(codContainer.value)">Inserir</button>
+                    </div>
+                </form>
+            </mat-tab>
+            <!--Plug-In / Plug-Out-->
+            <mat-tab style = "color: rgb(22,144,149) li" label="Plug-In / Plug-Out">
+                <form><br><br>
+                    <mat-form-field fxLayoutAlign="center center">
+                        <mat-label>Selecione o Container</mat-label>
+                        <input type="text" matInput [formControl]="containerControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option.name}}
+                        </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                    <br><br>
+                    <div fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" class ="ltr">Atualizar</button>
+                    </div>
+                </form>
+            </mat-tab>
+            <!--Consultar Containers já criados-->
+            <mat-tab label="Consulta">
+                <form><br><br>
+                    <mat-form-field fxLayoutAlign="end end">
+                        <input matInput placeholder="Código ISO do Container">
+                    </mat-form-field>
+                    <br><br>
+                    <div fxLayoutAlign="end end">
+                    <button mat-raised-button color="primary"  class ="ltr" [routerLink]="['/info_container']" 
+                    routerLinkActive="router-link-active">Consultar</button>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-card>
+</div>

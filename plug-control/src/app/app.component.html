@@ -1,0 +1,22 @@
+<div class = "navbar vertical">
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-toolbar class = 'background'>
+    <div fxFlex dir="ltr" style="margin: 1em;">
+      <button mat-button [routerLink]="['']" routerLinkActive="router-link-active" >
+        <img height="64px" width="284px" src="../assets/logopecem.png">
+      </button>
+    </div>
+    <div fxFlex dir="rtl" style="margin: 1em;">
+      <span>
+        <button mat-raised-button color="primary" [routerLink]="['/dashboards']" routerLinkActive="router-link-active">DashBoards</button>
+      </span>
+    </div>
+  </mat-toolbar>
+  </div>
+</div>
+
+<br>
+<br>
+    <div fxLayout="column wrap" fxLayoutAlign="center">
+      <router-outlet></router-outlet>
+    </div>
